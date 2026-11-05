@@ -1,0 +1,304 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Rubik Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-brand-pink: #ec1282;
+  --color-brand-pink-hover: #fa2393;
+  --color-bg-dark: #0b0612;
+  --color-surface-dark: #120a1d;
+  --color-surface-card: #160c24;
+  --color-border-card: #2f1747;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #0b0612;
+    color: #ffffff;
+  }
+  body {
+    background-color: #0b0612;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .k8m2-container {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .k8m2-container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .k8m2-container {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  /* Header */
+  .k8m2-header-bar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: #120a1d;
+    border-bottom: 1px solid #231238;
+    height: 60px;
+  }
+
+  @media (min-width: 1024px) {
+    .k8m2-header-bar {
+      height: 68px;
+    }
+  }
+
+  .k8m2-nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #d1c4e9;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+    text-decoration: none;
+  }
+
+  .k8m2-nav-item:hover {
+    color: #ffffff;
+    background-color: rgba(236, 18, 130, 0.12);
+  }
+
+  .k8m2-btn-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c112b;
+    border: 1px solid #361f52;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .k8m2-btn-login:hover {
+    background-color: #27183d;
+    border-color: #4f2e78;
+  }
+
+  .k8m2-btn-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #f01a8c 0%, #ec1282 100%);
+    box-shadow: 0 0 16px rgba(236, 18, 130, 0.4);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .k8m2-btn-register:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 24px rgba(236, 18, 130, 0.65);
+  }
+
+  /* Hero */
+  .k8m2-hero-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #150c23;
+    border: 1px solid #2f1747;
+    min-height: 280px;
+  }
+
+  @media (min-width: 640px) {
+    .k8m2-hero-wrapper {
+      min-height: 340px;
+      border-radius: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .k8m2-hero-wrapper {
+      min-height: 420px;
+      border-radius: 24px;
+    }
+  }
+
+  .k8m2-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f01a8c 0%, #ec1282 100%);
+    box-shadow: 0 4px 20px rgba(236, 18, 130, 0.55);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  @media (min-width: 768px) {
+    .k8m2-hero-cta {
+      font-size: 18px;
+      padding: 14px 40px;
+    }
+  }
+
+  .k8m2-hero-cta:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 28px rgba(236, 18, 130, 0.75);
+  }
+
+  /* Payouts strip */
+  .k8m2-payouts-box {
+    background-color: #12091c;
+    border: 1px solid #26133a;
+    border-radius: 16px;
+    padding: 16px 20px;
+  }
+
+  .k8m2-badge-star {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+
+  /* Drawer CSS-only */
+  #k8m2-drawer {
+    display: none;
+  }
+
+  #k8m2-drawer:target {
+    display: block;
+  }
+
+  .k8m2-drawer-scrim {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(5, 2, 9, 0.75);
+    z-index: 50;
+  }
+
+  .k8m2-drawer-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 85vw;
+    background-color: #120a1d;
+    border-right: 1px solid #2b1545;
+    z-index: 51;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* SEO article */
+  .k8m2-article {
+    background-color: #120a1d;
+    border: 1px solid #24133b;
+    border-radius: 16px;
+    padding: 24px 20px;
+    line-height: 1.7;
+    color: #c9bed9;
+  }
+
+  @media (min-width: 768px) {
+    .k8m2-article {
+      padding: 36px 32px;
+      border-radius: 20px;
+    }
+  }
+
+  .k8m2-heading-2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+
+  .k8m2-heading-2:first-of-type {
+    margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
+    .k8m2-heading-2 {
+      font-size: 24px;
+      margin-top: 32px;
+    }
+  }
+
+  .k8m2-para {
+    font-size: 15px;
+    color: #bfb2cf;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 768px) {
+    .k8m2-para {
+      font-size: 16px;
+    }
+  }
+
+  .k8m2-hashtag-link {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    background-color: #1a0f2b;
+    border: 1px solid #331a52;
+    color: #e572ba;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .k8m2-hashtag-link:hover {
+    background-color: #2b1445;
+    border-color: #ec1282;
+    color: #ffffff;
+  }
+}
